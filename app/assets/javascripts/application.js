@@ -10,7 +10,29 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require turbolinks
 //= require materialize-sprockets
 //= require_tree .
+
+$(document).ready(function(){
+  // init sidenav
+  $(".button-collapse").sideNav();
+
+  $('.datepicker').pickadate({
+  selectMonths: true, // Creates a dropdown to control month
+  selectYears: 2, // Creates a dropdown of 15 years to control year,
+  today: 'Today',
+  clear: 'Clear',
+  close: 'Ok',
+  closeOnSelect: false // Close upon selecting a date,
+  });
+
+  $('input#input_text, textarea#textarea1').characterCounter();
+
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+  $('.scrollspy').scrollSpy();
+
+});
